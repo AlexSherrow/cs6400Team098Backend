@@ -78,6 +78,25 @@
     <finalName>project</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+		  <plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-dependency-plugin</artifactId>
+			  <version>3.6.1</version>
+			  <executions>
+				  <execution>
+					  <phase>package</phase>
+					  <goals><goal>copy</goal></goals>
+					  <configuration>
+						  <artifactItems>
+						  <artifactItem>
+							<groupId>com.github.jsimone</groupId>
+							<artifactId>webapp-runner</artifactId>
+							<version>8.5.31.0</version>
+							<destFileName>webapp-runner.jar</destFileName>  
+						  </artifactItem>
+						  </artifactItems></configuration>
+				  </execution></executions>
+		  </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
